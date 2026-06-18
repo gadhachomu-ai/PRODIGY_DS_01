@@ -1,0 +1,33 @@
+Report: Global Population Exploratory Data Analysis
+Internship Task: 01
+Project: Exploratory Data Analysis (EDA) on World Bank Population Data
+Date: May 2024
+
+1. Executive Summary
+This report presents the findings of an Exploratory Data Analysis conducted on global population totals from 1960 to 2024. The objective was to clean raw World Bank data, handle missing values, and visualize significant demographic trends and distributions. Key findings indicate a steady global population rise, with significant regional variations and high concentration in specific nations.
+
+2. Methodology
+2.1 Data Acquisition
+The dataset was sourced from the World Bank Open Data portal. It initially contained metadata rows and a wide format where each year was represented as a separate column.
+
+2.2 Data Cleaning & Preprocessing
+Header Correction: Skipped initial metadata rows to align column headers.
+Feature Selection: Dropped redundant columns (Indicator Name, Indicator Code) and completely empty columns (2025, Unnamed: 70).
+Reshaping: Transformed the data from 'Wide' to 'Long' format using the melt function, making it suitable for time-series plotting.
+Missing Values: Addressed data gaps using intra-country forward and backward filling to maintain sequential integrity.
+Entity Filtering: Identified and removed 31 aggregate codes (e.g., 'World', 'High Income') to ensure visualizations focused purely on sovereign nations.
+3. Key Findings & Visualizations
+3.1 Top 10 Most Populous Countries
+As of 2024, India and China remain the world's population leaders, both exceeding 1.4 billion people. The visualization shows a sharp decline in population size from the top two nations to the rest of the top ten, highlighting a significant demographic concentration.
+
+3.2 Global Growth Trends
+The total global population (summing individual countries) has shown a consistent linear upward trend since 1960. While growth rates in some developed nations have slowed, the aggregate global figure continues to rise due to rapid growth in regions like Sub-Saharan Africa and South Asia.
+
+3.3 Population Distribution
+The population distribution is highly skewed. A vast majority of countries have populations under 50 million, while a very small number of "outlier" nations hold a massive percentage of the global total. This is clearly evidenced by the long-tail histogram and KDE plot.
+
+4. Challenges Addressed
+Handling Aggregates: Distinguishing between actual countries and regional groupings (like "OECD members") was critical to prevent double-counting in global sums.
+Missing Data: Several smaller nations had missing records in early decades (1960s); these were successfully imputed to provide a continuous trend line.
+5. Conclusion
+The EDA confirms that while the global population is increasing, it is not distributed evenly. The analysis provides a clean, processed dataset that can be used for further predictive modeling or deeper regional demographic studies. All objectives for Task 1 have been successfully met.
